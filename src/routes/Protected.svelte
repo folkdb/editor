@@ -26,6 +26,5 @@
 
 {#if $user && $user.username}
   <h1>Protected</h1>
-  <h2>Response to the test query follows:</h2>
   <AllArtists/>
 {:else}{handlePrivateRoute()}{/if}
