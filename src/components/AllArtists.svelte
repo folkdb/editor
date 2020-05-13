@@ -12,7 +12,7 @@
     return json.map((item) => ({
       id: item.ref['@ref'].id,
       name: item.data.name,
-    });
+    }));
   };
   
   onMount(async () => {
