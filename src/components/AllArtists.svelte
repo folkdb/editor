@@ -7,10 +7,10 @@
     artists = [];
 
     const res = await fetch('/.netlify/functions/all-artists');
-    
-    console.log(res.body);
 
     const json = await res.json();
+    
+    console.log(json);
     
     json.forEach((item) => {
       const id = item.ref['@ref'].id;
