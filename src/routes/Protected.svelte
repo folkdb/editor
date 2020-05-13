@@ -2,6 +2,7 @@
   import { navigate } from 'svelte-routing'
   import Swal from 'sweetalert2'
   import { user, redirectURL } from '../store.js'
+  import AllArtists from '../components/AllArtists.svelte'
 
   export let location
 
@@ -25,4 +26,6 @@
 
 {#if $user && $user.username}
   <h1>Protected</h1>
+  <h2>Response to the test query follows:</h2>
+  <AllArtists/>
 {:else}{handlePrivateRoute()}{/if}
