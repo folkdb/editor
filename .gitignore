@@ -1,6 +1,4 @@
 .DS_Store
 node_modules
-public/bundle.*
-
-# Local Netlify folder
-.netlify
+dist
+.svelte-render
