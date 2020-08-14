@@ -6,13 +6,11 @@
   const getArtists = async () => {
     artists = [];
     const res = await fetch('/.netlify/functions/all-artists');
-    const json = await res.json();
-    console.log(json);
+    console.log(res);
+
+    const { allArtists } = await res.json();
     
-    return json.map((item) => ({
-      id: item.ref['@ref'].id,
-      name: item.data.name,
-    }));
+    return allArtists.data;
   };
   
   onMount(async () => {
@@ -25,7 +23,7 @@
 <ul>
   {#each artists as artist}
     <li>
-      {artist.name} (ref: {artist.id})
+      {artist.name} (ref: {artist._id})
     </li>
   {/each}
 </ul>
